@@ -6,7 +6,7 @@ description: >
   /api/plugins/memory-galaxy/) hands obsidian:// deep links to the OS handler
   when you click a star. No agent tools, no network, no credentials; it only
   opens an existing .md file inside the vault you point it at.
-author: babyboy
+author: Taptapcuz
 license: MIT
 provides_tools: []
 dependencies: []
