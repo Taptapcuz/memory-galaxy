@@ -1,0 +1,13 @@
+name: memory-galaxy
+version: "1.0.0"
+description: >
+  Backend half of the Memory Galaxy Desktop pane. The Hermes Desktop renderer
+  may only open http/https/mailto links, so this plugin's API (mounted at
+  /api/plugins/memory-galaxy/) hands obsidian:// deep links to the OS handler
+  when you click a star. No agent tools, no network, no credentials; it only
+  opens an existing .md file inside the vault you point it at.
+author: babyboy
+license: MIT
+provides_tools: []
+dependencies: []
+requires_env: []

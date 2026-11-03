@@ -1,0 +1,7 @@
+# dependencies / build output that should not be committed
+node_modules/
+.DS_Store
+*.log
+
+# a vault scanned locally (notes are not part of this repo)
+examples/vault/.obsidian/

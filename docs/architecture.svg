@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="620" viewBox="0 0 1240 620" role="img" aria-label="Memory Galaxy: how a click in the pane opens the note in Obsidian">
+  <defs>
+    <style>
+      .bg { fill: #0b1017; }
+      .card { fill: #111a24; stroke: #23303f; stroke-width: 1.5; rx: 12; }
+      .card-off { fill: #1a1216; stroke: #4a2b32; stroke-width: 1.5; rx: 12; }
+      .title { fill: #e6edf6; font: 600 20px ui-sans-serif, system-ui, sans-serif; }
+      .sub { fill: #7f92a8; font: 13px ui-sans-serif, system-ui, sans-serif; }
+      .head { fill: #dbe6f3; font: 600 14px ui-sans-serif, system-ui, sans-serif; }
+      .body { fill: #9fb0c4; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .lbl { fill: #8fd6a8; font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .lbl-warn { fill: #e8a0a0; font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .arrow { stroke: #4b6a8f; stroke-width: 1.6; fill: none; marker-end: url(#head); }
+      .arrow-warn { stroke: #7a3b45; stroke-width: 1.6; fill: none; marker-end: url(#headWarn); stroke-dasharray: 5 4; }
+      .dot { fill: #4fc3f7; }
+    </style>
+    <marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b6a8f" />
+    </marker>
+    <marker id="headWarn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7a3b45" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1240" height="620" />
+
+  <text class="title" x="48" y="56">memory-galaxy — what happens when you click a star</text>
+  <text class="sub" x="48" y="80">the renderer cannot open obsidian://, so the click takes a detour through the plugin backend</text>
+
+  <!-- 1 renderer -->
+  <rect class="card" x="48" y="120" width="250" height="150" />
+  <text class="head" x="68" y="150">Hermes Desktop renderer</text>
+  <text class="body" x="68" y="176">plugin.js — canvas pane</text>
+  <text class="body" x="68" y="196">force layout · hover · drag</text>
+  <text class="body" x="68" y="216">click → preview panel</text>
+  <circle class="dot" cx="74" cy="244" r="4" />
+  <text class="body" x="88" y="248">reads the vault live</text>
+
+  <!-- 2 backend -->
+  <rect class="card" x="356" y="120" width="250" height="150" />
+  <text class="head" x="376" y="150">plugin backend (Python)</text>
+  <text class="body" x="376" y="176">plugin_api.py · FastAPI</text>
+  <text class="body" x="376" y="196">POST /open {vault, path}</text>
+  <text class="body" x="376" y="216">refuses anything but an</text>
+  <text class="body" x="376" y="234">existing .md inside vault</text>
+
+  <!-- 3 os -->
+  <rect class="card" x="664" y="120" width="200" height="150" />
+  <text class="head" x="684" y="150">OS handler</text>
+  <text class="body" x="684" y="176">os.startfile(uri)</text>
+  <text class="body" x="684" y="196">open / xdg-open elsewhere</text>
+  <text class="body" x="684" y="222">no shell, no eval —</text>
+  <text class="body" x="684" y="240">one URL, built server-side</text>
+
+  <!-- 4 obsidian -->
+  <rect class="card" x="922" y="120" width="230" height="150" />
+  <text class="head" x="942" y="150">Obsidian</text>
+  <text class="body" x="942" y="176">note opens in its vault</text>
+  <text class="body" x="942" y="200">obsidian://open</text>
+  <text class="body" x="942" y="220">?vault=Hermes%20Vault</text>
+  <text class="body" x="942" y="238">&amp;file=Daily/2024-05-01</text>
+
+  <!-- arrows -->
+  <path class="arrow" d="M 298 195 L 350 195" />
+  <text class="lbl" x="252" y="180">ctx.rest('/open')</text>
+
+  <path class="arrow" d="M 606 195 L 658 195" />
+  <text class="lbl" x="600" y="180">validated path</text>
+
+  <path class="arrow" d="M 864 195 L 916 195" />
+  <text class="lbl" x="820" y="180">deep link</text>
+
+  <!-- blocked paths -->
+  <rect class="card-off" x="48" y="330" width="520" height="120" />
+  <text class="head" x="68" y="360">✗ straight from the pane</text>
+  <text class="body" x="68" y="386">ctx.os.openExternal('obsidian://…')</text>
+  <text class="lbl-warn" x="68" y="410">SUPPORTED_WEB = http:, https:, mailto:</text>
+  <text class="body" x="68" y="432">everything else is rejected as an invalid URL</text>
+
+  <rect class="card-off" x="620" y="330" width="532" height="120" />
+  <text class="head" x="640" y="360">✗ bundling three.js</text>
+  <text class="body" x="640" y="386">import * as THREE from 'three'</text>
+  <text class="lbl-warn" x="640" y="410">allowlist = @hermes/plugin-sdk, react*</text>
+  <text class="body" x="640" y="432">hence a 2D canvas renderer with its own 3D projection</text>
+
+  <path class="arrow-warn" d="M 170 270 L 170 326" />
+  <path class="arrow-warn" d="M 480 270 C 480 300, 640 300, 640 326" />
+
+  <!-- footnotes -->
+  <text class="sub" x="48" y="512">Both halves ship together: desktop-plugins/memory-galaxy (the pane) and plugins/memory-galaxy (the backend + its manifest).</text>
+  <text class="sub" x="48" y="536">The backend hot-mounts on the first request, so no dashboard restart is needed after install.</text>
+  <text class="sub" x="48" y="566">Vanilla installs, no marker file: the pane loads by default. A .hermes-package.json in the folder would silently switch it off.</text>
+  <text class="sub" x="48" y="596">Verified end to end: clicking the panel button changed Obsidian's window title to the note that was clicked.</text>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "name": "memory-galaxy",
+  "label": "Memory Galaxy",
+  "description": "Backend for the Memory Galaxy pane: hands obsidian:// deep links to the OS, which the Desktop renderer is not allowed to open itself.",
+  "icon": "Star",
+  "version": "1.0.0",
+  "tab": {
+    "path": "/memory-galaxy",
+    "hidden": true
+  },
+  "entry": "dist/index.js",
+  "api": "plugin_api.py"
+}

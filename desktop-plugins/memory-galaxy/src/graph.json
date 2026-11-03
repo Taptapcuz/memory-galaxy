@@ -1,0 +1,118 @@
+{
+  "vault": "C:/Users/Loc1/Projects/memory-galaxy/examples/vault",
+  "generatedAt": "2026-11-03T17:58:22.323Z",
+  "nodes": [
+    {
+      "id": "Daily/2024-05-01",
+      "label": "2024-05-01",
+      "folder": "Daily",
+      "mtime": 1793728701,
+      "linkCount": 2,
+      "content": "# 2024-05-01\n\nStarted sketching the star map. Tomorrow: [[Daily/2024-05-02]].\nThe plan lives in [[Projects/Roadmap]].\n",
+      "brightness": 0
+    },
+    {
+      "id": "Daily/2024-05-02",
+      "label": "2024-05-02",
+      "folder": "Daily",
+      "mtime": 1793728701,
+      "linkCount": 2,
+      "content": "# 2024-05-02\n\nWired the canvas renderer, then wrote down the [[Ideas]] that came out of it.\nYesterday: [[Daily/2024-05-01]].\n",
+      "brightness": 0
+    },
+    {
+      "id": "Ideas",
+      "label": "Ideas",
+      "folder": "Root",
+      "mtime": 1793728701,
+      "linkCount": 2,
+      "content": "# Ideas\n\n- A graph view that reads like a star map\n- Drag a star to rearrange the sky\n- Open the note in Obsidian with one click\n\nRelated: [[Projects/Backlog]], [[Welcome]]\n",
+      "brightness": 0
+    },
+    {
+      "id": "Projects/Backlog",
+      "label": "Backlog",
+      "folder": "Projects",
+      "mtime": 1793728701,
+      "linkCount": 2,
+      "content": "# Backlog\n\n- [x] Preview panel\n- [x] Open in Obsidian\n- [ ] Pin nodes across layout resets\n\nUp: [[Projects/Roadmap]] · ideas: [[Ideas]]\n",
+      "brightness": 0
+    },
+    {
+      "id": "Projects/Roadmap",
+      "label": "Roadmap",
+      "folder": "Projects",
+      "mtime": 1793728701,
+      "linkCount": 3,
+      "content": "# Roadmap\n\n1. Force-directed layout\n2. Neighbour highlighting\n3. Live rescan of the vault\n\nSee [[Projects/Backlog]] for the smaller items and [[Daily/2024-05-01]] for the\nday this started. Context lives in [[Welcome]].\n",
+      "brightness": 0
+    },
+    {
+      "id": "Welcome",
+      "label": "Welcome",
+      "folder": "Root",
+      "mtime": 1793728701,
+      "linkCount": 3,
+      "content": "# Welcome\n\nA tiny demo vault for Memory Galaxy. It is here so the plugin has something to\ndraw before you point it at your own notes.\n\nStart from [[Projects/Roadmap]], skim the [[Ideas]] parking lot, and check what\nhappened on [[Daily/2024-05-01]].\n",
+      "brightness": 0
+    }
+  ],
+  "links": [
+    {
+      "source": "Daily/2024-05-01",
+      "target": "Daily/2024-05-02"
+    },
+    {
+      "source": "Daily/2024-05-01",
+      "target": "Projects/Roadmap"
+    },
+    {
+      "source": "Daily/2024-05-02",
+      "target": "Ideas"
+    },
+    {
+      "source": "Daily/2024-05-02",
+      "target": "Daily/2024-05-01"
+    },
+    {
+      "source": "Ideas",
+      "target": "Projects/Backlog"
+    },
+    {
+      "source": "Ideas",
+      "target": "Welcome"
+    },
+    {
+      "source": "Projects/Backlog",
+      "target": "Projects/Roadmap"
+    },
+    {
+      "source": "Projects/Backlog",
+      "target": "Ideas"
+    },
+    {
+      "source": "Projects/Roadmap",
+      "target": "Projects/Backlog"
+    },
+    {
+      "source": "Projects/Roadmap",
+      "target": "Daily/2024-05-01"
+    },
+    {
+      "source": "Projects/Roadmap",
+      "target": "Welcome"
+    },
+    {
+      "source": "Welcome",
+      "target": "Projects/Roadmap"
+    },
+    {
+      "source": "Welcome",
+      "target": "Ideas"
+    },
+    {
+      "source": "Welcome",
+      "target": "Daily/2024-05-01"
+    }
+  ]
+}
