@@ -5,7 +5,9 @@ glowing stars, `[[wikilinks]]` are faint lines, newer notes burn brighter. Hover
 neighbours light up, drag stars to rearrange the sky, click one for a preview, and open the real note
 in Obsidian with one button.
 
-![Memory Galaxy pane](docs/screenshots/pane.png)
+![Memory Galaxy as a pane in Hermes Desktop](docs/screenshots/sidebar.png)
+
+*A pane in Hermes Desktop, next to the other tools — not a separate app.*
 
 ![Preview panel with the Open in Obsidian button](docs/screenshots/preview.png)
 
